@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ember & Oak | Crafted with Passion. Served with Elegance.</title>
+  <meta name="description" content="Experience fine dining crafted to perfection. From intimate dinners to special celebrations, we create moments worth savoring.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+  <div class="hero-container">
+    <!-- Header -->
+    <header class="hero-header">
+      <div class="logo">
+        <img src="images/Logo.png?v=3" alt="Ember & Oak Logo" style="height: 48px;">
+      </div>
+      
+      <div class="header-right-wrapper">
+        <nav class="nav-pill" aria-label="Main Navigation">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#menu" class="nav-link">Menu</a>
+          <a href="#specials" class="nav-link">Specials</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+  
+        <div class="header-cta" style="display: flex; gap: 40px; align-items: center;">
+          <a href="#reservation" class="btn btn-primary d-none d-lg-inline" style="height: auto; padding: 6px 16px; font-size: 14px;">Reserve a Table</a>
+          <button class="mobile-menu-btn" aria-label="Open Menu" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 6px; cursor: pointer; color: var(--text-heading); display: none; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay d-none-desktop">
+      <button class="mobile-menu-close" style="position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 36px; cursor: pointer; color: var(--text-heading);">×</button>
+      <a href="#home" class="nav-link" style="font-size: 24px;">Home</a>
+      <a href="#menu" class="nav-link" style="font-size: 24px;">Menu</a>
+      <a href="#specials" class="nav-link" style="font-size: 24px;">Specials</a>
+      <a href="#about" class="nav-link" style="font-size: 24px;">About</a>
+      <a href="#reservation" class="nav-link" style="font-size: 24px;">Reservations</a>
+      <a href="contact.html" class="nav-link" style="font-size: 24px;">Contact</a>
+      <a href="#reservation" class="btn btn-primary" style="margin-top: 16px; padding: 12px 32px;">Reserve a Table</a>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="hero-wrapper">
+      <section id="home" class="hero-main">
+        <div class="hero-left" style="position: relative; z-index: 10;">
+          <h1 class="hero-heading d-none-mobile">
+            Experience Fine<br>Dining Like<br>Never Before
+          </h1>
+          <h1 class="hero-heading d-none-desktop" style="white-space: pre-line; line-height: 1.1; margin-bottom: 24px; font-size: clamp(52px, 15vw, 72px); letter-spacing: -0.02em;">Experience
+            Fine
+            Dining
+            Like
+            Never
+            Before</h1>
+          <p class="hero-desc d-none-mobile">Discover a culinary journey of exquisite flavors and<br>unmatched hospitality in the heart of the city.</p>
+          <div class="hero-buttons-wrapper d-none-mobile">
+            <a href="#reservation" class="btn btn-primary">Reserve a Table</a>
+            <a href="#menu" class="btn btn-secondary">View Menu</a>
+          </div>
+        </div>
+      
+      <div class="hero-right">
+        <div class="radial-glow"></div>
+        <img src="images/new_plate.avif" alt="Premium Main Dish Plate" class="hero-plate">
+        
+        <div class="floating-rating-card top-right">
+          <div style="font-weight: 800; font-size: 18px; color: var(--primary); margin-right: 4px;">#1</div>
+          <div class="rating-score">Award Winning Chef</div>
+        </div>
+        
+        <div class="floating-rating-card bottom-right">
+          <div class="rating-stars-small">★★★★★</div>
+          <div class="rating-score">4.9/5</div>
+        </div>
+      </div>
+      
+      <!-- Floating Ingredients (positioned relative to hero-container) -->
+      <img src="images/tomato_slice.png?v=3" alt="Tomato" class="floating-ing tomato-1">
+      <img src="images/mushroom_piece.png?v=3" alt="Mushroom" class="floating-ing mushroom-1">
+      <img src="images/herb_leaf.png?v=3" alt="Herb" class="floating-ing herb-1">
+      </section>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Chef Specials -->
+    <section id="specials" class="section bg-soft">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="badge">Signature Creations</div>
+        </div>
+        <h2 class="section-title reveal">Chef's Specials</h2>
+        
+        <div class="grid-4">
+          <div class="card reveal">
+            <img src="images/filet_mignon.jpg" alt="Wagyu Ribeye Steak" class="special-card-img">
+            <h3 class="card-title">Wagyu Ribeye Steak</h3>
+            <p style="font-size: 16px;">Premium Australian Wagyu grilled to perfection with roasted vegetables and garlic herb butter.</p>
+            <div class="special-card-footer">
+              <div class="rating-stars" style="font-size: 16px;">★★★★★</div>
+              <div style="font-size: 24px; font-weight: 800; color: var(--primary);">$42</div>
+            </div>
+          </div>
+
+          <div class="card reveal" style="transition-delay: 100ms;">
+            <img src="images/risotto_dish.png" alt="Truffle Mushroom Risotto" class="special-card-img">
+            <h3 class="card-title">Truffle Mushroom Risotto</h3>
+            <p style="font-size: 16px;">Creamy Arborio rice finished with parmesan, truffle oil, and wild mushrooms.</p>
+            <div class="special-card-footer">
+              <div class="rating-stars" style="font-size: 16px;">★★★★★</div>
+              <div style="font-size: 24px; font-weight: 800; color: var(--primary);">$28</div>
+            </div>
+          </div>
+
+          <div class="card reveal" style="transition-delay: 200ms;">
+            <img src="images/salmon_dish.png" alt="Grilled Atlantic Salmon" class="special-card-img">
+            <h3 class="card-title">Grilled Atlantic Salmon</h3>
+            <p style="font-size: 16px;">Fresh Atlantic salmon served with lemon butter sauce and seasonal greens.</p>
+            <div class="special-card-footer">
+              <div class="rating-stars" style="font-size: 16px;">★★★★★</div>
+              <div style="font-size: 24px; font-weight: 800; color: var(--primary);">$31</div>
+            </div>
+          </div>
+
+          <div class="card reveal" style="transition-delay: 300ms;">
+            <img src="images/seafood_linguine.jpg" alt="Seafood Linguine" class="special-card-img">
+            <h3 class="card-title">Seafood Linguine</h3>
+            <p style="font-size: 16px;">Fresh shrimp, mussels, calamari, and herbs tossed in a rich garlic tomato sauce.</p>
+            <div class="special-card-footer">
+              <div class="rating-stars" style="font-size: 16px;">★★★★★</div>
+              <div style="font-size: 24px; font-weight: 800; color: var(--primary);">$35</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Reviews -->
+    <section id="reviews" class="section">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 48px;">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 16px;">
+            <svg viewBox="0 0 48 48" width="40" height="40">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+            </svg>
+            <h2 class="section-title" style="margin: 0;">Google Reviews</h2>
+          </div>
+          <div style="font-size: 20px; font-weight: 700;">4.9 / 5.0 Rating</div>
+          <div class="rating-stars" style="margin-bottom: 8px; color: #FBBC05;">★★★★★</div>
+          <div style="font-size: 16px; color: var(--text-muted);">Based on 2,458 Google Reviews</div>
+        </div>
+        <div class="grid-3 mobile-carousel">
+          <div class="card reveal" style="padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: #4285F4; color: white; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700;">M</div>
+              <div>
+                <div style="font-weight: 700; color: var(--text-heading);">Michael T.</div>
+                <div style="font-size: 14px; color: var(--text-muted);">Local Guide · 45 reviews</div>
+              </div>
+            </div>
+            <div class="rating-stars" style="font-size: 16px; margin: 0; color: #FBBC05;">★★★★★</div>
+            <p style="font-size: 15px; line-height: 1.6; margin: 0; flex: 1;">"An absolute gem! The Wagyu Ribeye was cooked to perfection and melted in my mouth. The service was impeccable, making our anniversary dinner truly special. The atmosphere strikes the perfect balance between elegant and welcoming."</p>
+          </div>
+          <div class="card reveal" style="padding: 32px; display: flex; flex-direction: column; gap: 16px; transition-delay: 100ms;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: #EA4335; color: white; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700;">S</div>
+              <div>
+                <div style="font-weight: 700; color: var(--text-heading);">Sarah Jenkins</div>
+                <div style="font-size: 14px; color: var(--text-muted);">12 reviews</div>
+              </div>
+            </div>
+            <div class="rating-stars" style="font-size: 16px; margin: 0; color: #FBBC05;">★★★★★</div>
+            <p style="font-size: 15px; line-height: 1.6; margin: 0; flex: 1;">"I can't recommend the Seafood Linguine enough. The ingredients were incredibly fresh and the flavors were perfectly balanced. The sommelier helped us pick a fantastic wine that paired beautifully with our meal."</p>
+          </div>
+          <div class="card reveal" style="padding: 32px; display: flex; flex-direction: column; gap: 16px; transition-delay: 200ms;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div style="width: 48px; height: 48px; border-radius: 50%; background: #34A853; color: white; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700;">D</div>
+              <div>
+                <div style="font-weight: 700; color: var(--text-heading);">David R.</div>
+                <div style="font-size: 14px; color: var(--text-muted);">Local Guide · 128 reviews</div>
+              </div>
+            </div>
+            <div class="rating-stars" style="font-size: 16px; margin: 0; color: #FBBC05;">★★★★★</div>
+            <p style="font-size: 15px; line-height: 1.6; margin: 0; flex: 1;">"From the moment we walked in, we knew we were in for a treat. The Truffle Mushroom Risotto is out of this world. Every detail, from the ambient lighting to the prompt service, shows they really care about the guest experience."</p>
+          </div>
+        </div>
+        <div class="carousel-dots d-none-desktop"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container grid-2">
+        <div class="reveal">
+          <div class="badge">Our Story</div>
+          <h2 style="font-size: 48px; font-weight: 700; margin-bottom: 32px; line-height: 1.1;">Every Great Meal Begins With Passion.</h2>
+          <p style="margin-bottom: 24px;">For over fifteen years, Ember & Oak has welcomed guests seeking more than just exceptional food. Our philosophy is simple: combine premium ingredients, culinary artistry, and genuine hospitality to create memorable dining experiences.</p>
+          <p style="margin-bottom: 40px;">Every plate is thoughtfully prepared by our chefs using carefully selected seasonal ingredients and modern cooking techniques that celebrate authentic flavors.</p>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div>
+              <div style="font-size: 32px; font-weight: 800; color: var(--primary);">15+</div>
+              <div style="font-weight: 600;">Years of Excellence</div>
+            </div>
+            <div>
+              <div style="font-size: 32px; font-weight: 800; color: var(--primary);">12k+</div>
+              <div style="font-weight: 600;">Happy Guests</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay: 200ms; position: relative; height: 100%;">
+          <img src="images/restaurant_interior.png" alt="Ember & Oak Interior" style="border-radius: var(--radius-img); box-shadow: var(--shadow-lg); width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section bg-soft">
+      <div class="container">
+        <div class="text-center reveal">
+          <h2 class="section-title">Explore Our Favorites</h2>
+        </div>
+        
+        <div class="menu-tabs reveal">
+          <button class="menu-tab active" data-target="menu-starters">Starters</button>
+          <button class="menu-tab" data-target="menu-mains">Main Courses</button>
+          <button class="menu-tab" data-target="menu-desserts">Desserts</button>
+          <button class="menu-tab" data-target="menu-drinks">Signature Drinks</button>
+        </div>
+
+        <div class="menu-content-container reveal" style="max-width: 1000px; margin: 0 auto;">
+          <!-- Starters -->
+          <div id="menu-starters" class="menu-pane active">
+            <div class="grid-2">
+              <div>
+                <div class="menu-item">
+                  <img src="images/burrata.png" class="menu-item-img" alt="Burrata">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Burrata with Heirloom Tomatoes</span>
+                      <span class="menu-item-price">$18</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/calamari.png" class="menu-item-img" alt="Crispy Calamari">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Crispy Calamari</span>
+                      <span class="menu-item-price">$16</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/oysters.png" class="menu-item-img" alt="Oysters">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Oysters Rockefeller</span>
+                      <span class="menu-item-price">$24</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="menu-item">
+                  <img src="images/truffle_fries.png" class="menu-item-img" alt="Truffle Fries">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Truffle Fries</span>
+                      <span class="menu-item-price">$12</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/pumpkin_soup.png" class="menu-item-img" alt="Pumpkin Soup">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Roasted Pumpkin Soup</span>
+                      <span class="menu-item-price">$14</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/beef_tartare.jpg" class="menu-item-img" alt="Beef Tartare">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Beef Tartare</span>
+                      <span class="menu-item-price">$22</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Mains -->
+          <div id="menu-mains" class="menu-pane" style="display: none;">
+            <div class="grid-2">
+              <div>
+                <div class="menu-item">
+                  <img src="images/filet_mignon.jpg" class="menu-item-img" alt="Wagyu Steak">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Wagyu Ribeye Steak</span>
+                      <span class="menu-item-price">$42</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/roasted_chicken.jpg" class="menu-item-img" alt="Chicken">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Herb Roasted Chicken</span>
+                      <span class="menu-item-price">$26</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/salmon_dish.png" class="menu-item-img" alt="Salmon">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Atlantic Salmon</span>
+                      <span class="menu-item-price">$31</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/lamb_chops.jpg" class="menu-item-img" alt="Lamb">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Lamb Chops</span>
+                      <span class="menu-item-price">$38</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="menu-item">
+                  <img src="images/seafood_linguine.jpg" class="menu-item-img" alt="Seafood">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Seafood Linguine</span>
+                      <span class="menu-item-price">$35</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/risotto_dish.png" class="menu-item-img" alt="Risotto">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Wild Mushroom Risotto</span>
+                      <span class="menu-item-price">$28</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/duck_breast.jpg" class="menu-item-img" alt="Duck">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Duck Breast</span>
+                      <span class="menu-item-price">$34</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/vegan_moussaka.jpg" class="menu-item-img" alt="Moussaka">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Vegan Moussaka</span>
+                      <span class="menu-item-price">$24</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Desserts -->
+          <div id="menu-desserts" class="menu-pane" style="display: none;">
+            <div class="grid-2">
+              <div>
+                <div class="menu-item">
+                  <img src="images/dessert_dish.png" class="menu-item-img" alt="Lava Cake">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Chocolate Lava Cake</span>
+                      <span class="menu-item-price">$18</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/tiramisu.jpg" class="menu-item-img" alt="Tiramisu">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Classic Tiramisu</span>
+                      <span class="menu-item-price">$14</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="menu-item">
+                  <img src="images/cheesecake.jpg" class="menu-item-img" alt="Cheesecake">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Vanilla Bean Cheesecake</span>
+                      <span class="menu-item-price">$15</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/lemon_tart.jpg" class="menu-item-img" alt="Lemon Tart">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Lemon Tart</span>
+                      <span class="menu-item-price">$12</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Drinks -->
+          <div id="menu-drinks" class="menu-pane" style="display: none;">
+            <div class="grid-2">
+              <div>
+                <div class="menu-item">
+                  <img src="images/old_fashioned.jpg" class="menu-item-img" alt="Old Fashioned" style="object-position: center; border-radius: 50%;">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Classic Old Fashioned</span>
+                      <span class="menu-item-price">$16</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/mojito.jpg" class="menu-item-img" alt="Mojito" style="object-position: center; border-radius: 50%;">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Passionfruit Mojito</span>
+                      <span class="menu-item-price">$14</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="menu-item">
+                  <img src="images/red_wine.jpg" class="menu-item-img" alt="Red Wine" style="object-position: center; border-radius: 50%;">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">House Red Wine</span>
+                      <span class="menu-item-price">$12</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu-item">
+                  <img src="images/sparkling_rose.jpg" class="menu-item-img" alt="Rose" style="object-position: center; border-radius: 50%;">
+                  <div class="menu-item-content">
+                    <div class="menu-item-header">
+                      <span class="menu-item-name">Sparkling Rosé</span>
+                      <span class="menu-item-price">$15</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex-center" style="margin-top: 60px;">
+            <button id="open-full-menu" class="btn btn-secondary reveal">View Full Menu</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Guests Love Us -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center reveal" style="max-width: 600px; margin: 0 auto 60px;">
+          <div class="badge">Ember & Oak Experience</div>
+          <h2 class="section-title" style="margin-bottom: 24px;">Why Guests Love Dining With Us</h2>
+          <p style="font-size: 18px; color: var(--text-body); line-height: 1.6;">Every detail of our restaurant is designed to elevate your dining experience, combining culinary mastery with unforgettable hospitality.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
+          <div class="card reveal" style="padding: 40px;">
+            <h3 class="card-title" style="font-size: 24px; margin-bottom: 16px;">Award-Winning Chefs</h3>
+            <p style="font-size: 16px; line-height: 1.6;">Experienced culinary professionals blending modern techniques with timeless recipes to create unforgettable flavors.</p>
+          </div>
+          <div class="card reveal" style="transition-delay: 100ms; padding: 40px;">
+            <h3 class="card-title" style="font-size: 24px; margin-bottom: 16px;">Premium Ingredients</h3>
+            <p style="font-size: 16px; line-height: 1.6;">We source locally and sustainably whenever possible, ensuring only the highest quality fresh ingredients make it to your plate.</p>
+          </div>
+          <div class="card reveal" style="transition-delay: 200ms; padding: 40px;">
+            <h3 class="card-title" style="font-size: 24px; margin-bottom: 16px;">Elegant Atmosphere</h3>
+            <p style="font-size: 16px; line-height: 1.6;">Thoughtfully designed interiors, warm ambient lighting, and refined acoustics create a sophisticated setting for any occasion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation -->
+    <section id="reservation" class="section">
+      <div class="container">
+        <div class="reservation-container bg-dark reveal">
+          <div class="grid-2">
+            <div>
+              <h2 style="font-size: 48px; margin-bottom: 24px; line-height: 1.1;">Reserve Your Table</h2>
+              <p style="margin-bottom: 40px; color: #ccc;">Enjoy a seamless dining experience by booking your table in advance.</p>
+              
+              <div style="margin-bottom: 32px;">
+                <div style="font-weight: 700; color: var(--text-white); margin-bottom: 8px;">Opening Hours</div>
+                <div>Mon–Thu: 11:00 AM – 10:00 PM</div>
+                <div>Fri–Sat: 11:00 AM – 11:30 PM</div>
+                <div>Sunday: 12:00 PM – 9:00 PM</div>
+              </div>
+            </div>
+            
+            <div class="card" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); color: var(--text-white);">
+              <form>
+                <div class="form-group">
+                  <label class="form-label" for="name">Full Name</label>
+                  <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="grid-2" style="gap: 20px;">
+                  <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="phone">Phone Number</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="+1 (555) 000-0000" required>
+                  </div>
+                </div>
+                <div class="grid-2" style="gap: 20px;">
+                  <div class="form-group">
+                    <label class="form-label" for="date">Date</label>
+                    <input type="date" id="date" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="time">Time</label>
+                    <input type="time" id="time" class="form-control" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="guests">Number of Guests</label>
+                  <select id="guests" class="form-control">
+                    <option>2 People</option>
+                    <option>3 People</option>
+                    <option>4 People</option>
+                    <option>5+ People</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="special-requests">Special Requests</label>
+                  <textarea id="special-requests" class="form-control" placeholder="Allergies, anniversaries, etc." rows="2"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full" style="margin-top: 16px;">Reserve Now</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Private Dining & Events -->
+    <section class="section bg-soft">
+      <div class="container">
+        <div class="grid-2" style="gap: 64px; align-items: stretch;">
+          <div class="reveal d-none-mobile" style="position: relative; display: flex;">
+            <div style="position: absolute; top: -20px; left: -20px; width: 100px; height: 100px; background: var(--primary); border-radius: 50%; opacity: 0.1; z-index: 0;"></div>
+            <img src="images/private_dining.png" alt="Private Dining Room" style="border-radius: var(--radius-img); box-shadow: var(--shadow-lg); width: 100%; object-fit: cover; position: relative; z-index: 1; border: 1px solid rgba(255,255,255,0.05); flex: 1;">
+          </div>
+          <div class="reveal private-dining-content" style="transition-delay: 200ms; display: flex; flex-direction: column; justify-content: center;">
+            <div class="badge badge-align" style="align-self: flex-start;">Exclusive Experiences</div>
+            <h2 class="private-dining-heading" style="font-size: 48px; font-weight: 700; margin-bottom: 24px; line-height: 1.1;">Private Dining & Events</h2>
+            <p class="private-dining-p" style="margin-bottom: 32px; font-size: 18px; line-height: 1.6; color: var(--text-body);">Host unforgettable occasions in our elegantly appointed private dining spaces. From intimate anniversary dinners to grand corporate gatherings, our dedicated events team ensures every detail is flawless.</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></div>
+                <span style="font-weight: 600;">Custom Menus</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></div>
+                <span style="font-weight: 600;">Dedicated Service</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></div>
+                <span style="font-weight: 600;">Audio/Visual Setup</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></div>
+                <span style="font-weight: 600;">Floral Arrangements</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn-primary" style="align-self: flex-start;">Inquire About Events</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- FAQ -->
+    <section class="section bg-soft">
+      <div class="container" style="max-width: 800px;">
+        <h2 class="section-title reveal">Frequently Asked Questions</h2>
+        
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="true">
+            Do I need a reservation?
+            <span style="font-size: 24px;">+</span>
+          </button>
+          <div class="faq-answer">
+            Reservations are recommended, especially during weekends and holidays, but walk-ins are welcome based on availability.
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            Do you offer vegetarian options?
+            <span style="font-size: 24px;">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes. Our menu includes a variety of vegetarian and vegan-friendly dishes crafted with the same passion.
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            Can I host private events?
+            <span style="font-size: 24px;">+</span>
+          </button>
+          <div class="faq-answer">
+            Absolutely. We offer private dining spaces for celebrations, corporate events, and special anniversaries.
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            Is parking available?
+            <span style="font-size: 24px;">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes. Complimentary parking is available for all guests.
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            Do you accommodate dietary restrictions?
+            <span style="font-size: 24px;">+</span>
+          </button>
+          <div class="faq-answer">
+            Our chefs are happy to accommodate dietary preferences and allergies whenever possible. Please let us know in advance.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="section">
+      <div class="container text-center reveal">
+        <h2 style="font-size: 48px; font-weight: 700; margin-bottom: 24px; line-height: 1.1;">Visit Ember & Oak</h2>
+        <div class="grid-3" style="gap: 32px; margin-bottom: 48px; text-align: left;">
+          <div class="card bg-soft" style="padding: 32px;">
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--primary);">Address</h3>
+            <p>123 Culinary Avenue<br>Downtown District<br>New York, NY 10001</p>
+          </div>
+          <div class="card bg-soft" style="padding: 32px;">
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--primary);">Contact</h3>
+            <p>+1 (555) 123-4567<br>hello@emberandoak.com<br>reservations@emberandoak.com</p>
+          </div>
+          <div class="card bg-soft" style="padding: 32px;">
+            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--primary);">Opening Hours</h3>
+            <p>Mon – Thu: 11:00 AM – 10:00 PM<br>Fri – Sat: 11:00 AM – 11:30 PM<br>Sunday: 12:00 PM – 9:00 PM</p>
+          </div>
+        </div>
+        
+        <!-- Google Maps Embed -->
+        <div style="width: 100%; height: 400px; border-radius: var(--radius-img); overflow: hidden; box-shadow: var(--shadow-md);">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25279998188!2d-74.14482811453268!3d40.69763123348633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section bg-soft text-center reveal" style="padding: 80px 20px;">
+      <div class="container" style="max-width: 600px;">
+        <h2 style="font-size: 36px; font-weight: 700; color: var(--text-heading); margin-bottom: 16px;">Join Our Community</h2>
+        <p style="color: var(--text-body); margin-bottom: 32px; font-size: 16px;">Be the first to hear about seasonal menus, exclusive events, chef specials, and unique dining experiences.</p>
+        <form style="display: flex; gap: 12px; max-width: 500px; margin: 0 auto;">
+          <input type="email" placeholder="Email Address" required style="flex: 1; padding: 16px 24px; border-radius: var(--radius-btn); border: 1px solid var(--border); font-size: 16px; font-family: inherit; outline: none;">
+          <button type="submit" class="btn btn-primary" style="padding: 16px 32px; white-space: nowrap;">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-dark footer">
+    <div class="container">
+      <div class="footer-grid reveal">
+        <div>
+          <h3 style="font-size: 24px; font-weight: 800; color: var(--primary); margin-bottom: 24px;">Ember & Oak</h3>
+          <p style="color: #888; margin-bottom: 24px;">Crafting memorable dining experiences through exceptional cuisine, warm hospitality, and timeless elegance.</p>
+          <div style="display: flex; gap: 16px;">
+            <a href="#" style="color: #888; transition: var(--transition-fast);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#888'">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" style="color: #888; transition: var(--transition-fast);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#888'">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" style="color: #888; transition: var(--transition-fast);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#888'">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <a href="#home" class="footer-link">Home</a>
+          <a href="#menu" class="footer-link">Menu</a>
+          <a href="#about" class="footer-link">About</a>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Services</div>
+          <a href="#" class="footer-link">Fine Dining</a>
+          <a href="contact.html" class="footer-link">Private Events</a>
+          <a href="#" class="footer-link">Catering</a>
+          <a href="#" class="footer-link">Gift Cards</a>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div style="color: #888; margin-bottom: 12px;">123 Culinary Avenue<br>New York, NY</div>
+          <div style="color: #888; margin-bottom: 12px;">+1 (555) 123-4567</div>
+          <div style="color: var(--primary);">hello@emberandoak.com</div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; color: #666; font-size: 14px;" class="reveal">
+        © 2026 Ember & Oak. All Rights Reserved. Designed for unforgettable dining experiences.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="mobile-cta d-none-desktop">
+    <a href="#reservation" class="btn btn-primary btn-full">Reserve Your Table</a>
+  </div>
+
+  <!-- Full Menu Modal Overlay -->
+  <div class="modal-overlay" id="full-menu-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-primary); z-index: 9999; overflow-y: auto; padding: 40px 20px;">
+    <div class="container" style="max-width: 1000px; position: relative;">
+      <button id="close-full-menu" style="position: fixed; top: 32px; right: 32px; background: none; border: none; font-size: 40px; color: var(--text-heading); cursor: pointer; z-index: 10000; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--bg-primary); border-radius: 50%; box-shadow: var(--shadow-md);">&times;</button>
+      <div class="text-center" style="margin-bottom: 40px;">
+        <div class="badge">Ember & Oak</div>
+        <h2 class="section-title">The Complete Menu</h2>
+        <p style="color: var(--text-body);">A full selection of our culinary offerings.</p>
+      </div>
+      
+      <h3 style="font-size: 28px; margin-bottom: 24px; color: var(--text-heading); border-bottom: 1px solid var(--border); padding-bottom: 8px;">Starters</h3>
+      <div class="grid-2" style="margin-bottom: 48px;">
+        <div>
+          <div class="menu-item"><img src="images/burrata.png" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Burrata with Heirloom Tomatoes</span><span class="menu-item-price">$18</span></div></div></div>
+          <div class="menu-item"><img src="images/calamari.png" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Crispy Calamari</span><span class="menu-item-price">$16</span></div></div></div>
+          <div class="menu-item"><img src="images/oysters.png" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Oysters Rockefeller</span><span class="menu-item-price">$24</span></div></div></div>
+          <div class="menu-item"><img src="images/charcuterie.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Charcuterie Board</span><span class="menu-item-price">$28</span></div></div></div>
+        </div>
+        <div>
+          <div class="menu-item"><img src="images/truffle_fries.png" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Truffle Fries</span><span class="menu-item-price">$12</span></div></div></div>
+          <div class="menu-item"><img src="images/pumpkin_soup.png" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Roasted Pumpkin Soup</span><span class="menu-item-price">$14</span></div></div></div>
+          <div class="menu-item"><img src="images/beef_tartare.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Beef Tartare</span><span class="menu-item-price">$22</span></div></div></div>
+          <div class="menu-item"><img src="images/crab_cakes.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Crab Cakes</span><span class="menu-item-price">$26</span></div></div></div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 28px; margin-bottom: 24px; color: var(--text-heading); border-bottom: 1px solid var(--border); padding-bottom: 8px;">Main Courses</h3>
+      <div class="grid-2" style="margin-bottom: 48px;">
+        <div>
+          <div class="menu-item"><img src="images/filet_mignon.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Wagyu Ribeye Steak</span><span class="menu-item-price">$42</span></div></div></div>
+          <div class="menu-item"><img src="images/roasted_chicken.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Herb Roasted Chicken</span><span class="menu-item-price">$26</span></div></div></div>
+          <div class="menu-item"><img src="images/salmon_dish.png" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Atlantic Salmon</span><span class="menu-item-price">$31</span></div></div></div>
+          <div class="menu-item"><img src="images/lamb_chops.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Lamb Chops</span><span class="menu-item-price">$38</span></div></div></div>
+          <div class="menu-item"><img src="images/filet_mignon.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Filet Mignon</span><span class="menu-item-price">$45</span></div></div></div>
+        </div>
+        <div>
+          <div class="menu-item"><img src="images/seafood_linguine.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Seafood Linguine</span><span class="menu-item-price">$35</span></div></div></div>
+          <div class="menu-item"><img src="images/risotto_dish.png" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Wild Mushroom Risotto</span><span class="menu-item-price">$28</span></div></div></div>
+          <div class="menu-item"><img src="images/duck_breast.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Duck Breast</span><span class="menu-item-price">$34</span></div></div></div>
+          <div class="menu-item"><img src="images/vegan_moussaka.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Vegan Moussaka</span><span class="menu-item-price">$24</span></div></div></div>
+          <div class="menu-item"><img src="images/lobster_tail.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Lobster Tail</span><span class="menu-item-price">$48</span></div></div></div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 28px; margin-bottom: 24px; color: var(--text-heading); border-bottom: 1px solid var(--border); padding-bottom: 8px;">Desserts & Drinks</h3>
+      <div class="grid-2" style="margin-bottom: 48px;">
+        <div>
+          <div class="menu-item"><img src="images/dessert_dish.png" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Chocolate Lava Cake</span><span class="menu-item-price">$18</span></div></div></div>
+          <div class="menu-item"><img src="images/tiramisu.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Classic Tiramisu</span><span class="menu-item-price">$14</span></div></div></div>
+          <div class="menu-item"><img src="images/cheesecake.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Vanilla Bean Cheesecake</span><span class="menu-item-price">$15</span></div></div></div>
+          <div class="menu-item"><img src="images/lemon_tart.jpg" class="menu-item-img" alt=""><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Lemon Tart</span><span class="menu-item-price">$12</span></div></div></div>
+        </div>
+        <div>
+          <div class="menu-item"><img src="images/old_fashioned.jpg" class="menu-item-img" alt="" style="object-position: center; border-radius: 50%;"><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Classic Old Fashioned</span><span class="menu-item-price">$16</span></div></div></div>
+          <div class="menu-item"><img src="images/mojito.jpg" class="menu-item-img" alt="" style="object-position: center; border-radius: 50%;"><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Passionfruit Mojito</span><span class="menu-item-price">$14</span></div></div></div>
+          <div class="menu-item"><img src="images/red_wine.jpg" class="menu-item-img" alt="" style="object-position: center; border-radius: 50%;"><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">House Red Wine</span><span class="menu-item-price">$12</span></div></div></div>
+          <div class="menu-item"><img src="images/sparkling_rose.jpg" class="menu-item-img" alt="" style="object-position: center; border-radius: 50%;"><div class="menu-item-content"><div class="menu-item-header"><span class="menu-item-name">Sparkling Rosé</span><span class="menu-item-price">$15</span></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @media (max-width: 768px) {
+      .mobile-cta { display: block !important; }
+      body { padding-bottom: 80px; } /* Space for mobile CTA */
+    }
+  </style>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
