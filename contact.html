@@ -16,7 +16,8 @@
   <link rel="stylesheet" href="css/sections.css">
 </head>
 <body>
-
+  <!-- Strict wrapper to prevent horizontal scrolling on mobile -->
+  <div style="overflow-x: hidden; position: relative; width: 100%; max-width: 100vw;">
   <!-- Header -->
   <div class="hero-container" style="min-height: auto; padding-bottom: 0;">
     <header class="hero-header">
@@ -257,6 +258,7 @@
     document.getElementById('contact-form').addEventListener('submit', (e) => {
       e.preventDefault();
     });
-  </script>
+    </div>
+  <script src="js/main.js"></script>
 </body>
 </html>
