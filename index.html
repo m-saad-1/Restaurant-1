@@ -21,22 +21,22 @@
     <!-- Header -->
     <header class="hero-header">
       <div class="logo">
-        <img src="images/Logo.png?v=3" alt="Ember & Oak Logo" style="height: 48px;">
+        <img src="images/Logo.png?v=3" alt="Ember & Oak Logo" style="height: 44px;">
       </div>
       
       <div class="header-right-wrapper">
         <nav class="nav-pill" aria-label="Main Navigation">
           <a href="#home" class="nav-link active">Home</a>
-          <a href="#menu" class="nav-link">Menu</a>
           <a href="#specials" class="nav-link">Specials</a>
           <a href="#about" class="nav-link">About</a>
+          <a href="#menu" class="nav-link">Menu</a>
           <a href="contact.html" class="nav-link">Contact</a>
         </nav>
   
-        <div class="header-cta" style="display: flex; gap: 40px; align-items: center;">
-          <a href="#reservation" class="btn btn-primary d-none d-lg-inline" style="height: auto; padding: 6px 16px; font-size: 14px;">Reserve a Table</a>
-          <button class="mobile-menu-btn" aria-label="Open Menu" style="background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 6px; cursor: pointer; color: var(--text-heading); display: none; align-items: center; justify-content: center;">
-            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none">
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <a href="#reservation" class="btn btn-primary d-none d-lg-inline" style="height: auto; padding: 8px 20px; font-size: 14px;">Reserve a Table</a>
+          <button class="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none" aria-hidden="true">
               <line x1="3" y1="12" x2="21" y2="12"></line>
               <line x1="3" y1="6" x2="21" y2="6"></line>
               <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -47,56 +47,55 @@
     </header>
 
     <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay d-none-desktop">
-      <button class="mobile-menu-close" style="position: absolute; top: 24px; right: 24px; background: none; border: none; font-size: 36px; cursor: pointer; color: var(--text-heading);">×</button>
-      <a href="#home" class="nav-link" style="font-size: 24px;">Home</a>
-      <a href="#menu" class="nav-link" style="font-size: 24px;">Menu</a>
-      <a href="#specials" class="nav-link" style="font-size: 24px;">Specials</a>
-      <a href="#about" class="nav-link" style="font-size: 24px;">About</a>
-      <a href="#reservation" class="nav-link" style="font-size: 24px;">Reservations</a>
-      <a href="contact.html" class="nav-link" style="font-size: 24px;">Contact</a>
-      <a href="#reservation" class="btn btn-primary" style="margin-top: 16px; padding: 12px 32px;">Reserve a Table</a>
+    <div id="mobile-menu" class="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+      <button class="mobile-menu-close" aria-label="Close navigation menu">×</button>
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#specials" class="nav-link">Specials</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#menu" class="nav-link">Menu</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="#reservation" class="btn btn-primary" style="margin-top: 8px; width: 100%; max-width: 280px;">Reserve a Table</a>
     </div>
 
     <!-- Hero Content -->
     <div class="hero-wrapper">
       <section id="home" class="hero-main">
-        <div class="hero-left" style="position: relative; z-index: 10;">
+
+        <div class="hero-left">
+          <!-- Desktop heading -->
           <h1 class="hero-heading d-none-mobile">
             Experience Fine<br>Dining Like<br>Never Before
           </h1>
-          <h1 class="hero-heading d-none-desktop" style="white-space: pre-line; line-height: 1.1; margin-bottom: 24px; font-size: clamp(52px, 15vw, 72px); letter-spacing: -0.02em;">Experience
-            Fine
-            Dining
-            Like
-            Never
-            Before</h1>
-          <p class="hero-desc d-none-mobile">Discover a culinary journey of exquisite flavors and<br>unmatched hospitality in the heart of the city.</p>
-          <div class="hero-buttons-wrapper d-none-mobile">
+          <!-- Mobile heading -->
+          <h1 class="hero-heading d-none-desktop" style="letter-spacing: -0.02em;">Experience<br>Fine Dining<br>Like Never<br>Before</h1>
+
+          <p class="hero-desc" style="margin-top: 16px; margin-bottom: 0;">Discover a culinary journey of exquisite flavors and unmatched hospitality in the heart of the city.</p>
+
+          <div class="hero-buttons-wrapper">
             <a href="#reservation" class="btn btn-primary">Reserve a Table</a>
             <a href="#menu" class="btn btn-secondary">View Menu</a>
           </div>
         </div>
       
-      <div class="hero-right">
-        <div class="radial-glow"></div>
-        <img src="images/new_plate.avif" alt="Premium Main Dish Plate" class="hero-plate">
-        
-        <div class="floating-rating-card top-right">
-          <div style="font-weight: 800; font-size: 18px; color: var(--primary); margin-right: 4px;">#1</div>
-          <div class="rating-score">Award Winning Chef</div>
+        <div class="hero-right">
+          <div class="radial-glow"></div>
+          <img src="images/new_plate.avif" alt="Premium Main Dish Plate" class="hero-plate">
+          
+          <div class="floating-rating-card top-right">
+            <div style="font-weight: 800; font-size: 18px; color: var(--primary); margin-right: 4px;">#1</div>
+            <div class="rating-score">Award Winning Chef</div>
+          </div>
+          
+          <div class="floating-rating-card bottom-right">
+            <div class="rating-stars-small">★★★★★</div>
+            <div class="rating-score">4.9/5</div>
+          </div>
         </div>
-        
-        <div class="floating-rating-card bottom-right">
-          <div class="rating-stars-small">★★★★★</div>
-          <div class="rating-score">4.9/5</div>
-        </div>
-      </div>
       
-      <!-- Floating Ingredients (positioned relative to hero-container) -->
-      <img src="images/tomato_slice.png?v=3" alt="Tomato" class="floating-ing tomato-1">
-      <img src="images/mushroom_piece.png?v=3" alt="Mushroom" class="floating-ing mushroom-1">
-      <img src="images/herb_leaf.png?v=3" alt="Herb" class="floating-ing herb-1">
+        <!-- Floating Ingredients -->
+        <img src="images/tomato_slice.png?v=3" alt="" aria-hidden="true" class="floating-ing tomato-1">
+        <img src="images/mushroom_piece.png?v=3" alt="" aria-hidden="true" class="floating-ing mushroom-1">
+        <img src="images/herb_leaf.png?v=3" alt="" aria-hidden="true" class="floating-ing herb-1">
       </section>
     </div>
   </div>
@@ -216,9 +215,9 @@
       <div class="container grid-2">
         <div class="reveal">
           <div class="badge">Our Story</div>
-          <h2 style="font-size: 48px; font-weight: 700; margin-bottom: 32px; line-height: 1.1;">Every Great Meal Begins With Passion.</h2>
-          <p style="margin-bottom: 24px;">For over fifteen years, Ember & Oak has welcomed guests seeking more than just exceptional food. Our philosophy is simple: combine premium ingredients, culinary artistry, and genuine hospitality to create memorable dining experiences.</p>
-          <p style="margin-bottom: 40px;">Every plate is thoughtfully prepared by our chefs using carefully selected seasonal ingredients and modern cooking techniques that celebrate authentic flavors.</p>
+          <h2 style="font-size: clamp(26px, 5vw, 48px); font-weight: 700; margin-bottom: 24px; line-height: 1.1;">Every Great Meal Begins With Passion.</h2>
+          <p style="margin-bottom: 20px; max-width: 100%;">For over fifteen years, Ember & Oak has welcomed guests seeking more than just exceptional food. Our philosophy is simple: combine premium ingredients, culinary artistry, and genuine hospitality to create memorable dining experiences.</p>
+          <p style="margin-bottom: 32px; max-width: 100%;">Every plate is thoughtfully prepared by our chefs using carefully selected seasonal ingredients and modern cooking techniques that celebrate authentic flavors.</p>
           
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
             <div>
@@ -505,18 +504,18 @@
           <h2 class="section-title" style="margin-bottom: 24px;">Why Guests Love Dining With Us</h2>
           <p style="font-size: 18px; color: var(--text-body); line-height: 1.6;">Every detail of our restaurant is designed to elevate your dining experience, combining culinary mastery with unforgettable hospitality.</p>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
-          <div class="card reveal" style="padding: 40px;">
-            <h3 class="card-title" style="font-size: 24px; margin-bottom: 16px;">Award-Winning Chefs</h3>
-            <p style="font-size: 16px; line-height: 1.6;">Experienced culinary professionals blending modern techniques with timeless recipes to create unforgettable flavors.</p>
+        <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;">
+          <div class="card reveal" style="padding: 36px;">
+            <h3 class="card-title" style="margin-bottom: 14px;">Award-Winning Chefs</h3>
+            <p style="font-size: 16px; line-height: 1.6; max-width: 100%;">Experienced culinary professionals blending modern techniques with timeless recipes to create unforgettable flavors.</p>
           </div>
-          <div class="card reveal" style="transition-delay: 100ms; padding: 40px;">
-            <h3 class="card-title" style="font-size: 24px; margin-bottom: 16px;">Premium Ingredients</h3>
-            <p style="font-size: 16px; line-height: 1.6;">We source locally and sustainably whenever possible, ensuring only the highest quality fresh ingredients make it to your plate.</p>
+          <div class="card reveal" style="transition-delay: 100ms; padding: 36px;">
+            <h3 class="card-title" style="margin-bottom: 14px;">Premium Ingredients</h3>
+            <p style="font-size: 16px; line-height: 1.6; max-width: 100%;">We source locally and sustainably whenever possible, ensuring only the highest quality fresh ingredients make it to your plate.</p>
           </div>
-          <div class="card reveal" style="transition-delay: 200ms; padding: 40px;">
-            <h3 class="card-title" style="font-size: 24px; margin-bottom: 16px;">Elegant Atmosphere</h3>
-            <p style="font-size: 16px; line-height: 1.6;">Thoughtfully designed interiors, warm ambient lighting, and refined acoustics create a sophisticated setting for any occasion.</p>
+          <div class="card reveal" style="transition-delay: 200ms; padding: 36px;">
+            <h3 class="card-title" style="margin-bottom: 14px;">Elegant Atmosphere</h3>
+            <p style="font-size: 16px; line-height: 1.6; max-width: 100%;">Thoughtfully designed interiors, warm ambient lighting, and refined acoustics create a sophisticated setting for any occasion.</p>
           </div>
         </div>
       </div>
@@ -528,8 +527,8 @@
         <div class="reservation-container bg-dark reveal">
           <div class="grid-2">
             <div>
-              <h2 style="font-size: 48px; margin-bottom: 24px; line-height: 1.1;">Reserve Your Table</h2>
-              <p style="margin-bottom: 40px; color: #ccc;">Enjoy a seamless dining experience by booking your table in advance.</p>
+              <h2 style="font-size: clamp(26px, 5vw, 48px); margin-bottom: 16px; line-height: 1.1;">Reserve Your Table</h2>
+              <p style="margin-bottom: 28px; color: #ccc; max-width: 100%;">Enjoy a seamless dining experience by booking your table in advance.</p>
               
               <div style="margin-bottom: 32px;">
                 <div style="font-weight: 700; color: var(--text-white); margin-bottom: 8px;">Opening Hours</div>
@@ -545,17 +544,17 @@
                   <label class="form-label" for="name">Full Name</label>
                   <input type="text" id="name" class="form-control" placeholder="John Doe" required>
                 </div>
-                <div class="grid-2" style="gap: 20px;">
+                <div class="grid-2 form-row" style="gap: 20px;">
                   <div class="form-group">
                     <label class="form-label" for="email">Email Address</label>
-                    <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                    <input type="email" id="email" class="form-control" placeholder="john@example.com" required autocomplete="email">
                   </div>
                   <div class="form-group">
                     <label class="form-label" for="phone">Phone Number</label>
-                    <input type="tel" id="phone" class="form-control" placeholder="+1 (555) 000-0000" required>
+                    <input type="tel" id="phone" class="form-control" placeholder="+1 (555) 000-0000" required autocomplete="tel">
                   </div>
                 </div>
-                <div class="grid-2" style="gap: 20px;">
+                <div class="grid-2 form-row" style="gap: 20px;">
                   <div class="form-group">
                     <label class="form-label" for="date">Date</label>
                     <input type="date" id="date" class="form-control" required>
@@ -594,30 +593,30 @@
             <div style="position: absolute; top: -20px; left: -20px; width: 100px; height: 100px; background: var(--primary); border-radius: 50%; opacity: 0.1; z-index: 0;"></div>
             <img src="images/private_dining.png" alt="Private Dining Room" style="border-radius: var(--radius-img); box-shadow: var(--shadow-lg); width: 100%; object-fit: cover; position: relative; z-index: 1; border: 1px solid rgba(255,255,255,0.05); flex: 1;">
           </div>
-          <div class="reveal private-dining-content" style="transition-delay: 200ms; display: flex; flex-direction: column; justify-content: center;">
-            <div class="badge badge-align" style="align-self: flex-start;">Exclusive Experiences</div>
-            <h2 class="private-dining-heading" style="font-size: 48px; font-weight: 700; margin-bottom: 24px; line-height: 1.1;">Private Dining & Events</h2>
-            <p class="private-dining-p" style="margin-bottom: 32px; font-size: 18px; line-height: 1.6; color: var(--text-body);">Host unforgettable occasions in our elegantly appointed private dining spaces. From intimate anniversary dinners to grand corporate gatherings, our dedicated events team ensures every detail is flawless.</p>
+          <div class="reveal private-dining-content" style="transition-delay: 200ms;">
+            <div class="badge badge-align">Exclusive Experiences</div>
+            <h2 class="private-dining-heading">Private Dining & Events</h2>
+            <p class="private-dining-p">Host unforgettable occasions in our elegantly appointed private dining spaces. From intimate anniversary dinners to grand corporate gatherings, our dedicated events team ensures every detail is flawless.</p>
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></div>
+            <div class="private-dining-features" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 36px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%; flex-shrink: 0;"></div>
                 <span style="font-weight: 600;">Custom Menus</span>
               </div>
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%; flex-shrink: 0;"></div>
                 <span style="font-weight: 600;">Dedicated Service</span>
               </div>
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%; flex-shrink: 0;"></div>
                 <span style="font-weight: 600;">Audio/Visual Setup</span>
               </div>
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%;"></div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="width: 8px; height: 8px; background: var(--primary); border-radius: 50%; flex-shrink: 0;"></div>
                 <span style="font-weight: 600;">Floral Arrangements</span>
               </div>
             </div>
-            <a href="contact.html" class="btn btn-primary" style="align-self: flex-start;">Inquire About Events</a>
+            <a href="contact.html" class="btn btn-primary">Inquire About Events</a>
           </div>
         </div>
       </div>
@@ -685,7 +684,7 @@
     <!-- Location -->
     <section class="section">
       <div class="container text-center reveal">
-        <h2 style="font-size: 48px; font-weight: 700; margin-bottom: 24px; line-height: 1.1;">Visit Ember & Oak</h2>
+        <h2 style="font-size: clamp(26px, 5vw, 48px); font-weight: 700; margin-bottom: 24px; line-height: 1.1;">Visit Ember & Oak</h2>
         <div class="grid-3" style="gap: 32px; margin-bottom: 48px; text-align: left;">
           <div class="card bg-soft" style="padding: 32px;">
             <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--primary);">Address</h3>
@@ -709,13 +708,13 @@
     </section>
 
     <!-- Newsletter -->
-    <section class="section bg-soft text-center reveal" style="padding: 80px 20px;">
+    <section class="section bg-soft text-center reveal">
       <div class="container" style="max-width: 600px;">
-        <h2 style="font-size: 36px; font-weight: 700; color: var(--text-heading); margin-bottom: 16px;">Join Our Community</h2>
-        <p style="color: var(--text-body); margin-bottom: 32px; font-size: 16px;">Be the first to hear about seasonal menus, exclusive events, chef specials, and unique dining experiences.</p>
-        <form style="display: flex; gap: 12px; max-width: 500px; margin: 0 auto;">
-          <input type="email" placeholder="Email Address" required style="flex: 1; padding: 16px 24px; border-radius: var(--radius-btn); border: 1px solid var(--border); font-size: 16px; font-family: inherit; outline: none;">
-          <button type="submit" class="btn btn-primary" style="padding: 16px 32px; white-space: nowrap;">Subscribe</button>
+        <h2 style="font-size: clamp(26px, 5vw, 36px); font-weight: 700; color: var(--text-heading); margin-bottom: 16px;">Join Our Community</h2>
+        <p style="color: var(--text-body); margin-bottom: 28px; font-size: 16px; max-width: 100%;">Be the first to hear about seasonal menus, exclusive events, chef specials, and unique dining experiences.</p>
+        <form class="newsletter-form" style="display: flex; gap: 12px; max-width: 500px; margin: 0 auto;" novalidate>
+          <input type="email" placeholder="Your email address" required aria-label="Email address" style="flex: 1; min-width: 0; padding: 14px 20px; border-radius: var(--radius-btn); border: 1px solid var(--border); font-size: 16px; font-family: inherit; outline: none; background: var(--bg-primary);">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
         </form>
       </div>
     </section>
@@ -837,13 +836,6 @@
       </div>
     </div>
   </div>
-
-  <style>
-    @media (max-width: 768px) {
-      .mobile-cta { display: block !important; }
-      body { padding-bottom: 80px; } /* Space for mobile CTA */
-    }
-  </style>
 
   <script src="js/main.js"></script>
 </body>

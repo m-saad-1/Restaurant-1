@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Ember & Oak</title>
-  <meta name="description" content="Contact us to book an event or make a reservation.">
+  <meta name="description" content="Contact Ember & Oak to book a private event, make a reservation, or send us a message. We'd love to hear from you.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/variables.css">
@@ -18,49 +21,64 @@
   <div class="hero-container" style="min-height: auto; padding-bottom: 0;">
     <header class="hero-header">
       <div class="logo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="var(--primary)" width="28" height="28" stroke-width="2">
-          <path d="M7 2v10M12 2v10M17 2v10M12 12v10"></path>
-          <path d="M7 12c0 2.5 5 2.5 5 2.5s5 0 5-2.5"></path>
-        </svg>
-        <div class="logo-text">
-          <div class="logo-title">SAVOR</div>
-          <div class="logo-subtitle">FINE DINING</div>
-        </div>
+        <img src="images/Logo.png?v=3" alt="Ember & Oak Logo" style="height: 44px;">
       </div>
       
       <div class="header-right-wrapper">
         <nav class="nav-pill" aria-label="Main Navigation">
           <a href="index.html#home" class="nav-link">Home</a>
-          <a href="index.html#menu" class="nav-link">Menu</a>
+          <a href="index.html#specials" class="nav-link">Specials</a>
           <a href="index.html#about" class="nav-link">About</a>
+          <a href="index.html#menu" class="nav-link">Menu</a>
           <a href="contact.html" class="nav-link active">Contact</a>
         </nav>
   
-        <div class="header-cta" style="display: flex; gap: 40px; align-items: center;">
-          <a href="index.html#reservation" class="btn btn-primary d-none d-lg-inline" style="height: auto; padding: 6px 16px; font-size: 14px;">Reserve a Table</a>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <a href="index.html#reservation" class="btn btn-primary d-none d-lg-inline" style="height: auto; padding: 8px 20px; font-size: 14px;">Reserve a Table</a>
+          <button class="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none" aria-hidden="true">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
         </div>
       </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+      <button class="mobile-menu-close" aria-label="Close navigation menu">&times;</button>
+      <a href="index.html#home" class="nav-link">Home</a>
+      <a href="index.html#specials" class="nav-link">Specials</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#menu" class="nav-link">Menu</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+      <a href="index.html#reservation" class="btn btn-primary" style="margin-top: 8px; width: 100%; max-width: 280px;">Reserve a Table</a>
+    </div>
   </div>
 
   <main>
-    <section class="section">
-      <div class="container text-center reveal">
-        <div class="badge">Get in Touch</div>
-        <h1 class="section-title" style="margin-bottom: 24px;">Contact Us</h1>
-        <p style="color: var(--text-body); margin: 0 auto 64px; font-size: 18px; max-width: 600px;">We'd love to hear from you. Whether you have a question about our menu, events, or reservations, our team is ready to answer all your questions.</p>
+    <section class="section" style="padding-top: calc(var(--section-padding) + 60px);">
+      <div class="container">
+        <div class="text-center reveal" style="margin-bottom: 48px;">
+          <div class="badge">Get in Touch</div>
+          <h1 class="section-title" style="margin-bottom: 16px;">Contact Us</h1>
+          <p style="color: var(--text-body); margin: 0 auto; font-size: clamp(15px, 2vw, 18px); max-width: 560px;">We'd love to hear from you. Whether you have a question about our menu, events, or reservations, our team is ready to help.</p>
+        </div>
         
-        <div class="grid-2" style="gap: 64px; text-align: left;">
-          <div class="card bg-soft" style="padding: 40px; text-align: left;">
-            <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 32px;">Send us a Message</h3>
-            <form>
+        <div class="contact-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+          <!-- Form Card -->
+          <div class="card reveal" style="padding: 36px;">
+            <h2 style="font-size: clamp(20px, 3vw, 24px); font-weight: 700; margin-bottom: 28px; color: var(--text-heading);">Send us a Message</h2>
+            <form id="contact-form" novalidate>
               <div class="form-group">
                 <label class="form-label" for="name">Full Name</label>
-                <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                <input type="text" id="name" class="form-control" placeholder="John Doe" required autocomplete="name">
               </div>
               <div class="form-group">
                 <label class="form-label" for="email">Email Address</label>
-                <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                <input type="email" id="email" class="form-control" placeholder="john@example.com" required autocomplete="email">
               </div>
               <div class="form-group">
                 <label class="form-label" for="subject">Subject</label>
@@ -68,34 +86,42 @@
                   <option value="private-dining">Private Dining & Events</option>
                   <option value="general">General Inquiry</option>
                   <option value="feedback">Feedback</option>
+                  <option value="reservation">Reservation Help</option>
                 </select>
               </div>
               <div class="form-group">
                 <label class="form-label" for="message">Message</label>
                 <textarea id="message" class="form-control" rows="5" placeholder="How can we help you?" required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary btn-full" style="margin-top: 16px;">Send Message</button>
+              <button type="submit" class="btn btn-primary btn-full" style="margin-top: 8px;">Send Message</button>
             </form>
           </div>
           
-          <div style="text-align: left;">
-            <div class="grid-2" style="gap: 32px; margin-bottom: 48px;">
-              <div>
-                <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--primary);">Location</h3>
-                <p>123 Culinary Avenue<br>Downtown District<br>New York, NY 10001</p>
+          <!-- Info Column -->
+          <div class="reveal" style="transition-delay: 100ms;">
+            <!-- Info cards -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px;">
+              <div class="card bg-soft" style="padding: 24px;">
+                <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--primary);">Location</h3>
+                <p style="font-size: 15px; max-width: 100%;">123 Culinary Avenue<br>Downtown District<br>New York, NY 10001</p>
               </div>
-              <div>
-                <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--primary);">Contact Info</h3>
-                <p>+1 (555) 123-4567<br>hello@emberandoak.com<br>events@emberandoak.com</p>
+              <div class="card bg-soft" style="padding: 24px;">
+                <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--primary);">Contact Info</h3>
+                <p style="font-size: 15px; max-width: 100%;"><a href="tel:+15551234567" style="color: inherit;">+1 (555) 123-4567</a><br><a href="mailto:hello@emberandoak.com" style="color: var(--primary);">hello@emberandoak.com</a></p>
               </div>
-              <div>
-                <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px; color: var(--primary);">Opening Hours</h3>
-                <p>Mon – Thu: 11:00 AM – 10:00 PM<br>Fri – Sat: 11:00 AM – 11:30 PM<br>Sunday: 12:00 PM – 9:00 PM</p>
+              <div class="card bg-soft" style="padding: 24px; grid-column: span 2;">
+                <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--primary);">Opening Hours</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 15px;">
+                  <span>Mon – Thu</span><span style="font-weight: 600; color: var(--text-heading);">11:00 AM – 10:00 PM</span>
+                  <span>Fri – Sat</span><span style="font-weight: 600; color: var(--text-heading);">11:00 AM – 11:30 PM</span>
+                  <span>Sunday</span><span style="font-weight: 600; color: var(--text-heading);">12:00 PM – 9:00 PM</span>
+                </div>
               </div>
             </div>
             
-            <div style="width: 100%; height: 350px; border-radius: var(--radius-img); overflow: hidden; box-shadow: var(--shadow-md);">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25279998188!2d-74.14482811453268!3d40.69763123348633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- Map -->
+            <div style="width: 100%; height: 320px; border-radius: var(--radius-img); overflow: hidden; box-shadow: var(--shadow-md);">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25279998188!2d-74.14482811453268!3d40.69763123348633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ember & Oak location map"></iframe>
             </div>
           </div>
         </div>
@@ -103,20 +129,20 @@
     </section>
   </main>
 
-  <footer id="contact" class="bg-dark footer">
+  <footer id="footer" class="bg-dark footer">
     <div class="container">
       <div class="footer-grid reveal">
         <div>
-          <h3 style="font-size: 24px; font-weight: 800; color: var(--primary); margin-bottom: 24px;">Ember & Oak</h3>
-          <p style="color: #888; margin-bottom: 24px;">Crafting memorable dining experiences through exceptional cuisine, warm hospitality, and timeless elegance.</p>
-          <div style="display: flex; gap: 16px;">
-            <a href="#" style="color: #888; transition: var(--transition-fast);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#888'">
+          <h3 style="font-size: 22px; font-weight: 800; color: var(--primary); margin-bottom: 20px;">Ember & Oak</h3>
+          <p style="color: #888; margin-bottom: 20px; max-width: 100%;">Crafting memorable dining experiences through exceptional cuisine, warm hospitality, and timeless elegance.</p>
+          <div style="display: flex; gap: 14px;">
+            <a href="#" aria-label="Facebook" style="color: #888; transition: var(--transition-fast);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#888'">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
             </a>
-            <a href="#" style="color: #888; transition: var(--transition-fast);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#888'">
+            <a href="#" aria-label="Instagram" style="color: #888; transition: var(--transition-fast);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#888'">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             </a>
-            <a href="#" style="color: #888; transition: var(--transition-fast);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#888'">
+            <a href="#" aria-label="Twitter" style="color: #888; transition: var(--transition-fast);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='#888'">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
             </a>
           </div>
@@ -127,7 +153,7 @@
           <a href="index.html#home" class="footer-link">Home</a>
           <a href="index.html#menu" class="footer-link">Menu</a>
           <a href="index.html#about" class="footer-link">About</a>
-          <a href="index.html#gallery" class="footer-link">Gallery</a>
+          <a href="index.html#specials" class="footer-link">Specials</a>
         </div>
 
         <div>
@@ -140,17 +166,48 @@
 
         <div>
           <div class="footer-col-title">Contact</div>
-          <div style="color: #888; margin-bottom: 12px;">123 Culinary Avenue<br>New York, NY</div>
-          <div style="color: #888; margin-bottom: 12px;">+1 (555) 123-4567</div>
-          <div style="color: var(--primary);">hello@emberandoak.com</div>
+          <div style="color: #888; margin-bottom: 12px; font-size: 15px;">123 Culinary Avenue<br>New York, NY 10001</div>
+          <div style="margin-bottom: 10px;"><a href="tel:+15551234567" style="color: #888; transition: var(--transition-fast);">+1 (555) 123-4567</a></div>
+          <div><a href="mailto:hello@emberandoak.com" style="color: var(--primary);">hello@emberandoak.com</a></div>
         </div>
       </div>
       
-      <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 32px; color: #666; font-size: 14px;" class="reveal">
-        © 2026 Ember & Oak. All Rights Reserved. Designed for unforgettable dining experiences.
+      <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 28px; color: #666; font-size: 14px;" class="reveal">
+        &copy; 2026 Ember & Oak. All Rights Reserved. Designed for unforgettable dining experiences.
       </div>
     </div>
   </footer>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="mobile-cta d-none-desktop">
+    <a href="index.html#reservation" class="btn btn-primary btn-full">Reserve Your Table</a>
+  </div>
+
+  <style>
+    /* Contact page specific mobile styles */
+    @media (max-width: 768px) {
+      .contact-layout {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+      }
+
+      .contact-layout .card {
+        padding: 24px !important;
+      }
+
+      /* Info cards grid – single col on small screens */
+      .contact-layout [style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Hours spanning card */
+      .contact-layout [style*="grid-column: span 2"] {
+        grid-column: span 1 !important;
+      }
+
+      /* Hours inner grid stays 2-col since it's label+value pairs */
+    }
+  </style>
 
   <script>
     // Reveal Animation Logic
@@ -166,6 +223,40 @@
     };
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
+
+    // Mobile menu
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+
+    if (mobileMenuBtn && mobileMenuOverlay) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuOverlay.classList.add('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      });
+
+      if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', () => {
+          mobileMenuOverlay.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      }
+
+      mobileMenuOverlay.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenuOverlay.classList.remove('active');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+
+    // Form submission
+    document.getElementById('contact-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+    });
   </script>
 </body>
 </html>

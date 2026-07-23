@@ -21,6 +21,9 @@
   --content-max: 1240px;
   --padding-x: 24px;
   --section-padding: 100px;
+
+  /* Touch target minimum */
+  --touch-target: 44px;
   
   /* Shadows */
   --shadow-sm: 0 8px 24px rgba(0,0,0,0.05);
@@ -41,11 +44,20 @@
 @media (max-width: 1024px) {
   :root {
     --section-padding: 80px;
+    --padding-x: 20px;
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --section-padding: 40px;
+    --section-padding: 56px;
+    --padding-x: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 48px;
+    --padding-x: 16px;
   }
 }

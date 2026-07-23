@@ -1,4 +1,7 @@
-/* --- HERO SECTION CONTAINER --- */
+/* ====================================================
+   HERO SECTION
+   ==================================================== */
+
 .hero-container {
   max-width: 100%;
   margin: 0;
@@ -28,6 +31,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .logo-text {
@@ -73,9 +77,12 @@
   font-size: 16px;
   font-weight: 500;
   color: var(--text-body);
-  padding: 8px 0;
+  padding: 8px 4px;
   transition: color var(--transition-fast);
   position: relative;
+  min-height: var(--touch-target);
+  display: inline-flex;
+  align-items: center;
 }
 
 .nav-link:hover {
@@ -91,14 +98,20 @@
   content: '';
   position: absolute;
   bottom: 2px;
-  left: 0;
-  width: 100%;
+  left: 4px;
+  width: calc(100% - 8px);
   height: 2px;
   background-color: var(--primary);
   border-radius: 2px;
 }
 
 /* --- HERO MAIN CONTENT --- */
+.hero-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
 .hero-main {
   flex: 1;
   display: flex;
@@ -155,12 +168,12 @@
 }
 
 .hero-plate {
-  width: 125%; /* Reduced from 140% */
+  width: 125%;
   max-width: 950px;
   z-index: 1;
-  filter: drop-shadow(0 60px 100px rgba(0,0,0,0.3)); /* Increased shadow */
+  filter: drop-shadow(0 60px 100px rgba(0,0,0,0.3));
   mix-blend-mode: multiply;
-  transform: translate(5%, 0%) rotate(3deg); /* Hides to the right side wall, moved up slightly */
+  transform: translate(5%, 0%) rotate(3deg);
 }
 
 /* --- FLOATING ELEMENTS --- */
@@ -220,21 +233,33 @@
 .herb-1 { width: 100px; top: 15%; left: 35%; }
 .tomato-2 { width: 90px; top: 20%; right: 25%; }
 
-/* Menu Tabs */
+/* ====================================================
+   MENU TABS
+   ==================================================== */
 .menu-tabs {
   display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 48px;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 40px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.menu-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .menu-tab {
-  padding: 12px 24px;
+  padding: 10px 20px;
   border-radius: var(--radius-btn);
   font-weight: 600;
+  font-size: 15px;
   color: var(--text-muted);
   transition: var(--transition-fast);
+  min-height: var(--touch-target);
+  display: inline-flex;
+  align-items: center;
 }
 
 .menu-tab:hover, .menu-tab.active {
@@ -259,34 +284,41 @@
 }
 
 #full-menu-modal .menu-item-img {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
 }
 
 .menu-item-content {
   flex: 1;
+  min-width: 0; /* prevents flex child overflow */
 }
 
 .menu-item-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  gap: 12px;
   margin-bottom: 4px;
 }
 
 .menu-item-name {
   font-weight: 700;
   color: var(--text-heading);
-  font-size: 20px;
+  font-size: clamp(16px, 2.5vw, 20px);
+  white-space: normal;
+  word-break: break-word;
 }
 
 .menu-item-price {
   font-weight: 700;
   color: var(--primary);
-  font-size: 20px;
+  font-size: clamp(16px, 2.5vw, 20px);
+  flex-shrink: 0;
 }
 
-/* Chef Specials */
+/* ====================================================
+   CHEF SPECIALS
+   ==================================================== */
 .special-card-img {
   width: 100%;
   height: 200px;
@@ -305,13 +337,14 @@
 }
 
 #specials .card p {
-  line-height: 1.4;
+  line-height: 1.5;
   margin-bottom: 12px;
   font-size: 15px !important;
 }
 
 #specials .card-title {
   margin-bottom: 8px;
+  font-size: clamp(16px, 3vw, 22px);
 }
 
 .special-card-footer {
@@ -323,7 +356,9 @@
   border-top: 1px solid var(--border);
 }
 
-/* Gallery Masonry */
+/* ====================================================
+   GALLERY MASONRY
+   ==================================================== */
 .gallery-masonry {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -337,14 +372,735 @@
   position: relative;
 }
 
-.span-row-2 {
-  grid-row: span 2;
+.span-row-2 { grid-row: span 2; }
+.span-col-2 { grid-column: span 2; }
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-fast);
 }
 
-.span-col-2 {
-  grid-column: span 2;
+.gallery-item:hover .gallery-img {
+  transform: scale(1.05);
 }
 
+/* ====================================================
+   RESERVATION
+   ==================================================== */
+.reservation-container {
+  background-image: linear-gradient(rgba(17,17,17,0.9), rgba(17,17,17,0.9)), url('../images/restaurant_interior.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--radius-card);
+  padding: 64px 48px;
+}
+
+@media (min-width: 769px) {
+  #reservation .grid-2 {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: center;
+  }
+}
+
+#reservation .form-row {
+  gap: 12px !important;
+}
+
+/* ====================================================
+   FAQ
+   ==================================================== */
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 4px 0;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: var(--text-heading);
+  cursor: pointer;
+  min-height: var(--touch-target);
+  gap: 16px;
+}
+
+.faq-question span {
+  flex-shrink: 0;
+  font-size: 24px;
+  line-height: 1;
+  transition: transform var(--transition-fast);
+}
+
+.faq-item.open .faq-question span {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: 0;
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 800px;
+  margin-top: 12px;
+}
+
+.faq-item.open .faq-question {
+  color: var(--primary);
+}
+
+/* ====================================================
+   FOOTER
+   ==================================================== */
+.footer {
+  padding: 80px 0 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-col-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 20px;
+}
+
+.footer-link {
+  display: block;
+  margin-bottom: 12px;
+  transition: color var(--transition-fast);
+  padding: 2px 0;
+  color: #888;
+}
+
+.footer-link:hover {
+  color: var(--primary);
+}
+
+/* ====================================================
+   MOBILE MENU & OVERLAY
+   ==================================================== */
+.mobile-menu-btn {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px;
+  cursor: pointer;
+  color: var(--text-heading);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-primary);
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 80px 32px 40px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+}
+
+.mobile-menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu-close {
+  display: none !important;
+}
+
+.mobile-menu-btn svg line {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.mobile-menu-btn[aria-expanded="true"] svg line:nth-child(1) {
+  opacity: 0;
+}
+
+.mobile-menu-btn[aria-expanded="true"] svg line:nth-child(2) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-btn[aria-expanded="true"] svg line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+
+.mobile-menu-overlay .nav-link {
+  font-size: 22px;
+  font-weight: 600;
+  padding: 10px 4px;
+  width: auto;
+  min-height: 52px;
+}
+
+/* ====================================================
+   STICKY MOBILE CTA
+   ==================================================== */
+.mobile-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg-primary);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+  z-index: 999;
+  display: none;
+}
+
+/* ====================================================
+   CAROUSEL (REVIEWS)
+   ==================================================== */
+.carousel-dots {
+  display: flex !important;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+#reviews .card:hover {
+  transform: none;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background: var(--primary);
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* ====================================================
+   PRIVATE DINING
+   ==================================================== */
+.private-dining-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.private-dining-heading {
+  font-size: clamp(28px, 4vw, 48px) !important;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.private-dining-p {
+  font-size: clamp(15px, 2vw, 18px) !important;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin-bottom: 32px;
+}
+
+/* ====================================================
+   BREAKPOINT: TABLET (1024px)
+   ==================================================== */
+@media (max-width: 1024px) {
+  .hero-main { align-items: center; justify-content: space-between; gap: 32px; }
+  .hero-left { min-width: auto; flex: 1; }
+  .hero-right { flex: 1; }
+  .floating-rating-card, .floating-ing { display: none; }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .footer-grid > div:first-child {
+    grid-column: span 2;
+  }
+
+  .nav-pill { display: none; }
+  .mobile-menu-btn { display: flex !important; }
+
+  .reservation-container {
+    padding: 48px 32px;
+  }
+
+  .gallery-masonry {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ====================================================
+   BREAKPOINT: MOBILE (768px)
+   ==================================================== */
+@media (max-width: 768px) {
+
+  /* Hero */
+  .hero-container {
+    padding: 12px 16px;
+    min-height: auto;
+    padding-bottom: 0;
+  }
+
+  .hero-header {
+    padding: 12px 16px;
+  }
+
+  .header-right-wrapper {
+    padding: 6px 6px 6px 0;
+    gap: 10px;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .hero-wrapper {
+    min-height: auto;
+    position: relative;
+  }
+
+  .hero-main {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    padding-top: 120px;
+    padding-bottom: 20px;
+    position: relative;
+    min-height: auto;
+  }
+
+  .hero-left {
+    order: 2;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 4px;
+    position: relative;
+    z-index: 5;
+  }
+
+  .hero-right {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    width: 100%;
+    z-index: 1; /* Behind heading and cut by #specials (z-index 10) */
+    overflow: visible;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* Align with heading */
+  }
+
+  .hero-plate {
+    width: 120%;
+    max-width: 500px;
+    transform: translate(55%, 0) rotate(5deg); /* Moved slightly left */
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+    opacity: 1;
+    mix-blend-mode: normal;
+  }
+
+  /* Mobile hero heading – single version shown via d-none-mobile/d-none-desktop logic */
+  .hero-heading {
+    font-size: clamp(18px, 6vw, 28px); /* Decreased size further */
+    white-space: normal;
+    line-height: 1.1;
+    color: #111;
+  }
+
+  .hero-desc {
+    display: none !important;
+  }
+
+  .hero-buttons-wrapper {
+    display: none !important;
+  }
+
+  /* Chef specials — 2 column on mobile */
+  #specials {
+    padding-top: 24px !important;
+  }
+
+  #specials .grid-4 {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  #specials .card {
+    padding: 14px;
+  }
+
+  .special-card-img {
+    height: 130px;
+    border-radius: 16px;
+  }
+
+  #specials .card-title {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  #specials .card p {
+    font-size: 13px !important;
+    display: none; /* hide description on very small cards to avoid clutter */
+  }
+
+  .special-card-footer {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .special-card-footer .rating-stars {
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+  }
+
+  .special-card-footer > div:last-child {
+    font-size: 18px !important;
+  }
+
+  /* Reviews carousel */
+  .mobile-carousel {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .mobile-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-carousel .card {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+    padding: 24px;
+  }
+
+  /* About section */
+  #about .container.grid-2 {
+    gap: 32px;
+  }
+
+  #about h2 {
+    font-size: clamp(26px, 7vw, 36px) !important;
+    margin-bottom: 20px !important;
+  }
+
+  #about .grid-2:last-child {
+    gap: 16px;
+  }
+
+  #about [style*="font-size: 32px"] {
+    font-size: 28px !important;
+  }
+
+  /* Menu section */
+  .menu-tabs {
+    gap: 6px;
+    margin-bottom: 28px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .menu-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu-tab {
+    padding: 9px 16px;
+    font-size: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .menu-item-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+  }
+
+  #full-menu-modal .menu-item-img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .menu-item-name,
+  .menu-item-price {
+    font-size: 15px;
+  }
+
+  /* Why Guests Love Us intro */
+  [style*="0 auto 60px"] {
+    margin-bottom: 32px !important;
+  }
+
+  /* Features grid - single column on mobile */
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .features-grid .card {
+    padding: 24px !important;
+  }
+
+  /* Why Guests Love Us */
+  [style*="minmax(320px, 1fr)"],
+  [style*="minmax(280px, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Reservation section */
+  .reservation-container {
+    padding: 32px 12px;
+    border-radius: 20px;
+  }
+  
+  #reservation .card {
+    padding: 20px !important;
+  }
+
+  .reservation-container h2 {
+    font-size: clamp(26px, 7vw, 36px) !important;
+    margin-bottom: 16px !important;
+  }
+
+  .reservation-container .grid-2 {
+    gap: 28px;
+  }
+
+  /* Stack email/phone and date/time fields on mobile */
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  /* Private dining */
+  .private-dining-content {
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+  }
+
+  .private-dining-content .badge-align {
+    align-self: flex-start !important;
+  }
+
+  /* Features grid in private dining */
+  .private-dining-content [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Private dining button */
+  .private-dining-content .btn {
+    align-self: flex-start;
+  }
+
+  /* FAQ */
+  .faq-question {
+    font-size: 16px;
+  }
+
+  /* Location section */
+  #location h2,
+  .section h2[style*="48px"] {
+    font-size: clamp(26px, 7vw, 36px) !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Map */
+  [style*="height: 400px"] {
+    height: 260px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Newsletter */
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 48px 0 32px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: span 1;
+  }
+
+  .footer-col-title {
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+
+  /* Mobile CTA */
+  .mobile-cta {
+    display: block;
+  }
+
+  body {
+    padding-bottom: 80px;
+  }
+
+  /* Full menu modal */
+  #full-menu-modal {
+    padding: 20px 16px !important;
+  }
+
+  #full-menu-modal .container {
+    padding: 0;
+  }
+
+  #close-full-menu {
+    position: fixed !important;
+    top: 16px !important;
+    right: 16px !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 28px !important;
+    z-index: 99999 !important;
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border) !important;
+  }
+
+  #full-menu-modal h2 {
+    font-size: clamp(24px, 7vw, 36px) !important;
+  }
+
+  #full-menu-modal h3 {
+    font-size: 20px !important;
+    margin-bottom: 16px !important;
+  }
+
+  #full-menu-modal .grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Private dining features to single column */
+  .private-dining-features {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-bottom: 28px !important;
+  }
+
+  /* Newsletter form - stack on mobile */
+  .newsletter-form {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .newsletter-form input,
+  .newsletter-form button {
+    width: 100%;
+    flex: none !important;
+  }
+
+  .newsletter-form button {
+    height: auto;
+    padding: 14px 24px;
+  }
+
+} /* end @media (max-width: 768px) */
+
+/* ====================================================
+   BREAKPOINT: SMALL MOBILE (480px)
+   ==================================================== */
+@media (max-width: 480px) {
+
+  #specials {
+    padding-top: 24px !important;
+  }
+
+  #specials .grid-4 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  #specials .card {
+    padding: 18px;
+  }
+
+  .special-card-img {
+    height: 180px;
+  }
+
+  #specials .card-title {
+    font-size: 17px;
+  }
+
+  #specials .card p {
+    display: block !important;
+    font-size: 13px !important;
+  }
+
+  .mobile-carousel .card {
+    flex: 0 0 92%;
+  }
+
+  .hero-heading {
+    font-size: clamp(36px, 11vw, 50px);
+  }
+}
+
+/* ====================================================
+   GALLERY RESPONSIVE
+   ==================================================== */
 @media (max-width: 1024px) {
   .gallery-masonry {
     grid-template-columns: repeat(2, 1fr);
@@ -359,211 +1115,7 @@
   .span-col-2 {
     grid-column: span 1;
   }
-}
-
-.gallery-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition-fast);
-}
-
-.gallery-item:hover .gallery-img {
-  transform: scale(1.05);
-}
-
-/* Reservation */
-.reservation-container {
-  background-image: linear-gradient(rgba(17,17,17,0.9), rgba(17,17,17,0.9)), url('../images/restaurant_interior.png');
-  background-size: cover;
-  background-position: center;
-  border-radius: var(--radius-card);
-  padding: 80px 40px;
-}
-
-/* FAQ */
-.faq-item {
-  border-bottom: 1px solid var(--border);
-  padding: 24px 0;
-}
-
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  padding: 0;
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 20px;
-  color: var(--text-heading);
-  cursor: pointer;
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  margin-top: 0;
-  color: var(--text-body);
-}
-
-.faq-item.open .faq-answer {
-  max-height: 800px;
-  margin-top: 16px;
-}
-
-.faq-item.open .faq-question {
-  color: var(--primary);
-}
-
-/* Footer */
-.footer {
-  padding: 80px 0 40px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 40px;
-  margin-bottom: 60px;
-}
-.footer-grid > div:first-child {
-  grid-column: span 2;
-}
-
-.footer-col-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text-white);
-  margin-bottom: 24px;
-}
-
-.footer-link {
-  display: block;
-  margin-bottom: 12px;
-  transition: color var(--transition-fast);
-}
-
-.footer-link:hover {
-  color: var(--primary);
-}
-
-/* Mobile Adjustments */
-@media (max-width: 1024px) {
-  .hero-main { align-items: center; justify-content: space-between; }
-  .hero-left { min-width: auto; flex: 1; }
-  .hero-right { flex: 1; }
-  .floating-rating-card, .floating-ing { display: none; }
-  .footer-grid { grid-template-columns: repeat(2, 1fr); }
-  .nav-pill { display: none; }
-  .mobile-menu-btn { display: block !important; }
-  .d-none.d-lg-inline { display: none !important; }
-}
-
-@media (max-width: 768px) {
-  .footer-grid { grid-template-columns: 1fr; }
-  .hero-heading { font-size: clamp(32px, 8vw, 42px); white-space: normal; }
-  .hero-buttons-wrapper { justify-content: space-between; gap: 16px; margin-top: 24px; }
-  .hero-buttons-wrapper .btn { flex: 1; text-align: center; padding: 12px 0; }
-  .hero-right { display: flex; justify-content: flex-end; overflow: visible; }
-  .hero-plate { width: 200%; max-width: none; transform: translate(15%, 5%); filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); }
-
-  #specials .grid-4 {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .mobile-carousel {
-    display: flex !important;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 16px;
-    padding-bottom: 24px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Hide scrollbar for clean look */
-  }
-  .mobile-carousel::-webkit-scrollbar {
-    display: none;
-  }
-  .mobile-carousel .card {
-    flex: 0 0 85%;
-    scroll-snap-align: center;
-  }
-  
-  .private-dining-content {
-    align-items: center !important;
-    text-align: center;
-    padding: 0 16px;
-  }
-  .private-dining-heading {
-    font-size: 36px !important;
-  }
-  .badge-align {
-    align-self: center !important;
-  }
-  .private-dining-btn {
-    align-self: center !important;
-  }
-  
-  /* Carousel Dots */
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: -10px;
-  }
-  .carousel-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--border);
-    transition: var(--transition-fast);
-  }
-  .carousel-dot.active {
-    background: var(--primary);
-    width: 24px;
-    border-radius: 4px;
-  }
-
-  /* Mobile Menu Overlay CSS */
-  .mobile-menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--bg-primary);
-    z-index: 10001;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    padding-top: 80px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-  .mobile-menu-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  
-  /* Sticky Mobile CTA */
-  .mobile-cta {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 16px;
-    background: var(--bg-primary);
-    box-shadow: 0 -10px 20px rgba(0,0,0,0.05);
-    z-index: 999;
+  .span-row-2 {
+    grid-row: span 1;
   }
 }
-
